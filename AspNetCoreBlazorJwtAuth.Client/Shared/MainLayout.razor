@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4 flex-row-reverse">
+        <ul class="nav">
+            <LoginDisplay>
+                <LinkTemplate>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@context.Item2">@context.Item1</a>
+                    </li>
+                </LinkTemplate>
+                <TextTemplate>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">@context</a>
+                    </li>
+                </TextTemplate>
+            </LoginDisplay>
+        </ul>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
