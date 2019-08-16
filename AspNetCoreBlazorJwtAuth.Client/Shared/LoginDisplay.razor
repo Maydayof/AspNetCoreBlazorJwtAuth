@@ -1,16 +1,18 @@
 ﻿<AuthorizeView>
     <Authorized>
         @TextTemplate($"Hello, {@context.User.Identity.Name}!")
-        @LinkTemplate(new Tuple<string, string>("Log out","Logout"))
+        @LinkTemplate(new Tuple<string, string>("Log out", "Logout"))
     </Authorized>
     <NotAuthorized>
-        @LinkTemplate(new Tuple<string, string>("Log In","Login"))
-        @LinkTemplate(new Tuple<string, string>("Register","Register"))
+        @LinkTemplate(new Tuple<string, string>("Log In", "Login"))
+        @LinkTemplate(new Tuple<string, string>("Register", "Register"))
     </NotAuthorized>
 </AuthorizeView>
 
 
-@code {    
-  [Parameter] RenderFragment<Tuple<string,string>> LinkTemplate { get; set; }
-  [Parameter] RenderFragment<string> TextTemplate { get; set; }
+@code {
+    [Parameter]
+    public RenderFragment<Tuple<string, string>> LinkTemplate { get; set; }
+    [Parameter]
+    public RenderFragment<string> TextTemplate { get; set; }
 }
