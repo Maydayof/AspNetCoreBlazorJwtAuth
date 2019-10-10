@@ -1,6 +1,6 @@
 ﻿@page "/login"
 @inject IAuthService AuthService
-@inject NavigationManager UriHelper
+@inject NavigationManager NavManager
 
 <h1>Login</h1>
 
@@ -47,7 +47,7 @@
 
         if (result.Successful)
         {
-            UriHelper.NavigateTo("/");
+            NavManager.NavigateTo("/");
         }
         else
         {

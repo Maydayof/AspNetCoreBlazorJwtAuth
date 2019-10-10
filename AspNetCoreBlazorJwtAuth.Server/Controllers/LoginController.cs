@@ -32,7 +32,7 @@ namespace AspNetCoreBlazorJwtAuth.Server.Controllers
         {
             var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, false, false);
 
-            if (!result.Succeeded) return BadRequest(new LoginResult { Successful = false, Error = "Username and password are invalid." });
+            if (!result.Succeeded) return Ok(new LoginResult { Successful = false, Error = "Username and/or password are invalid." });
 
             var claims = new[]
             {

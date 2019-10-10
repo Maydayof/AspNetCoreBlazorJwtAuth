@@ -1,6 +1,6 @@
 ﻿@page "/logout"
 @inject IAuthService AuthService
-@inject NavigationManager UriHelper
+@inject NavigationManager NavManager
 
 
 @code {
@@ -8,7 +8,7 @@
     protected override async Task OnInitializedAsync()
     {
         await AuthService.Logout();
-        UriHelper.NavigateTo("/");
+        NavManager.NavigateTo("/");
     }
 
 }
